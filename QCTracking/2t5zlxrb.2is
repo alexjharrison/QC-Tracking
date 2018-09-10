@@ -1,0 +1,152 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+
+namespace QCTracking
+{
+    public partial class ModifyItemForm : Form
+    {
+        List<SingleBatch> fullList = new List<SingleBatch>();
+
+        public ModifyItemForm(List<SingleBatch> passedList, int numInList)
+        {
+            fullList = passedList;
+            InitializeComponent();
+            label2.Text = fullList[numInList].Material.ToString() + " " + fullList[numInList].SizeShade.ToString() + " " + fullList[numInList].BatchNum.ToString();
+            hideShow(numInList);
+            string[] status1 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status2 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status3 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status4 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status5 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status6 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status7 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status8 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status9 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status10 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status11 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status12 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status13 = {"In Process", "Conform", "Non-Conform", "Warning"};
+            string[] status14 = {"In Process", "Conform", "Non-Conform"};
+            
+            comboBox1.DataSource = status1;
+            comboBox2.DataSource = status2;
+            comboBox3.DataSource = status3;
+            comboBox4.DataSource = status4;
+            comboBox5.DataSource = status5;
+            comboBox6.DataSource = status6;
+            comboBox7.DataSource = status7;
+            comboBox8.DataSource = status8;
+            comboBox9.DataSource = status9;
+            comboBox10.DataSource = status10;
+            comboBox11.DataSource = status11;
+            comboBox12.DataSource = status12;
+            comboBox13.DataSource = status13;
+            comboBox14.DataSource = status14;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Form itemListForm = new ItemListForm(fullList);
+            this.Hide();
+            itemListForm.ShowDialog();
+            this.Close();
+        }
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ComboBox cb = (ComboBox)sender;
+            string item = cb.Text;
+            if (item != null)
+                MessageBox.Show(item);
+            label18.Text = DateTime.Now.Date.ToString();
+        }
+        void hideShow(int numInList)
+        {
+            
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox10_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox12_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox13_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox14_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void saveToFile()
+        {
+
+        }
+
+    }
+}
